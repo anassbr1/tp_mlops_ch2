@@ -3,7 +3,5 @@ dbt_pipeline:
   outputs:
     dev:
       type: duckdb
-      # Chemin vers la base DuckDB créée par ingest.py
-      # Le chemin est relatif au répertoire dbt_pipeline/
-      path: "../pipeline/ventes.duckdb"
+      path: "pipeline/ventes.duckdb"
       threads: 1

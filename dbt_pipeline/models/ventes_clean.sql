@@ -8,14 +8,13 @@
 {{ config(materialized='view') }}
 
 SELECT
-    CAST(id_client   AS INTEGER)  AS id_client,
-    CAST(nom         AS VARCHAR)  AS nom,
-    CAST(montant     AS DOUBLE)   AS montant,
-    CAST(date_vente  AS DATE)     AS date_vente,
-    CAST(region      AS VARCHAR)  AS region,
-    CAST(statut      AS VARCHAR)  AS statut,
-    -- Colonne calculée : mois de la vente (format YYYY-MM)
-    STRFTIME(CAST(date_vente AS DATE), '%Y-%m') AS annee_mois
+    CAST(id_client AS INTEGER) AS id_client,
+    CAST(nom       AS VARCHAR) AS nom,
+    CAST(montant   AS DOUBLE)  AS montant,
+    date_vente,
+    CAST(region    AS VARCHAR) AS region,
+    CAST(statut    AS VARCHAR) AS statut,
+    STRFTIME(STRPTIME(CAST(date_vente AS VARCHAR), '%d/%m/%Y'), '%Y-%m') AS annee_mois
 FROM raw.ventes
 WHERE
     montant IS NOT NULL

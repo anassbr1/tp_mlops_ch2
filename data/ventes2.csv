@@ -1,4 +1,4 @@
-﻿id_client,nom,montant,date_vente,region,statut
+id_client,nom,montant,date_vente,region,statut
 1,Alice Martin,1500,15/01/2024,Nord,valide
 2,Bob Dupont,2300.5,18/01/2024,Sud,valide
 3,Claire Petit,850,02/02/2024,Est,valide
