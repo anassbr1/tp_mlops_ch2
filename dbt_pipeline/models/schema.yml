@@ -1,0 +1,68 @@
+version: 2
+
+models:
+  - name: ventes_clean
+    description: "Données de ventes nettoyées : lignes invalides filtrées, types normalisés."
+    columns:
+      - name: id_client
+        description: "Identifiant unique du client"
+        tests:
+          - not_null
+          - unique
+
+      - name: nom
+        description: "Nom complet du client"
+        tests:
+          - not_null
+
+      - name: montant
+        description: "Montant de la vente en euros (toujours > 0)"
+        tests:
+          - not_null
+
+      - name: date_vente
+        description: "Date de la transaction (format DATE)"
+        tests:
+          - not_null
+
+      - name: region
+        description: "Région géographique du client"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Nord', 'Sud', 'Est', 'Ouest']
+
+      - name: statut
+        description: "Statut de la vente (toujours 'valide' après filtrage)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['valide']
+
+  - name: ventes_resume
+    description: "Agrégation des ventes par région et par mois."
+    columns:
+      - name: region
+        description: "Région géographique"
+        tests:
+          - not_null
+
+      - name: annee_mois
+        description: "Mois de la vente (YYYY-MM)"
+        tests:
+          - not_null
+
+      - name: nb_transactions
+        description: "Nombre de transactions"
+        tests:
+          - not_null
+
+      - name: total_ventes
+        description: "Total des montants (€)"
+        tests:
+          - not_null
+
+      - name: panier_moyen
+        description: "Montant moyen par transaction (€)"
+        tests:
+          - not_null

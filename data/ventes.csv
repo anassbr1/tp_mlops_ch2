@@ -1,0 +1,16 @@
+id_client,nom,montant,date_vente,region,statut
+1,Alice Martin,1500,15/01/2024,Nord,valide
+2,Bob Dupont,2300.5,18/01/2024,Sud,valide
+3,Claire Petit,850,02/02/2024,Est,valide
+4,David Moreau,,10/02/2024,Ouest,invalide
+5,Eve Lambert,4200.75,14/02/2024,Nord,valide
+6,Frank Girard,1100,01/03/2024,Sud,valide
+7,Grace Leroy,3300,05/03/2024,Est,valide
+8,Henri Blanc,0,10/03/2024,Ouest,invalide
+9,Isabelle Noir,2750,15/03/2024,Nord,valide
+10,Jules Roux,1980,20/03/2024,Sud,valide
+11,Karen Simon,620,01/04/2024,Est,valide
+12,Luc Martin,4500,05/04/2024,Ouest,valide
+13,Marie Durand,,08/04/2024,Nord,invalide
+14,Nicolas Lefort,3100,12/04/2024,Sud,valide
+15,Olivia Garnier,780,18/04/2024,Est,valide

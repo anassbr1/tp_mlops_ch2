@@ -1,0 +1,26 @@
+name: 'dbt_pipeline'
+version: '1.0.0'
+config-version: 2
+
+# Profil de connexion (défini dans profiles.yml)
+profile: 'dbt_pipeline'
+
+# Chemins des modèles, seeds, tests
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+# Répertoire de compilation
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuration des modèles
+models:
+  dbt_pipeline:
+    # Tous les modèles sont des vues par défaut
+    +materialized: view
